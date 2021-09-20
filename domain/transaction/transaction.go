@@ -74,7 +74,7 @@ func (t Transaction) Note() string {
 }
 
 func (t *Transaction) UpdateNote(note string) error {
-	if len(note) < noteLimit {
+	if len(note) > noteLimit {
 		return errors.WithStack(ErrNoteTooLong)
 	}
 
